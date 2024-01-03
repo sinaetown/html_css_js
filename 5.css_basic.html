@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS BASIC</title>
+    <style>
+      body {
+        background-color: lightgrey;
+      }
+      p {
+        background-color: lightcyan;
+        /* text design */
+        letter-spacing: 2px;
+        word-spacing: 5px;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .bigtext {
+        font-size: 24px;
+      }
+      .relativetext {
+        font-size: 120%;
+      }
+      .em_parent {
+        font-size: 20px;
+      }
+      .em_child {
+        font-size: 1.5em;
+      }
+      .percent_parent {
+        font-size: 20px;
+      }
+      .percent_child {
+        font-size: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS 기본 문법</h2>
+    <p>우선 적용</p>
+
+    <p class="italic bigtext">font style과 font size 중첩적용1</p>
+    <p class="italic relativetext">font style과 font size 중첩적용2</p>
+
+    <!-- em percent 비교 -->
+    <div class="em_parent">
+      <div class="em_child">
+        이 텍스트는 부모 글꼴의 1.5배 크기의 글꼴입니다.
+      </div>
+    </div>
+
+    <div class="percent_parent">
+      <div class="percent_child">
+        이 텍스트는 부모 글꼴의 150%크기의 글꼴입니다.
+      </div>
+    </div>
+
+    <div style="border: 3px solid black; padding: 20px; margin: 30px">
+      margin, border, padding을 가진 요소
+    </div>
+    <div style="padding-left: 20px">left padding만을 가진 요소</div>
+    <div style="text-align: center;">
+        <table
+        style="
+          text-align: center;
+          border: 1px black solid;
+          border-collapse: collapse;
+          /* margin: auto; */ /*Table을 div로 감싸서 in-line block해도 됨*/
+          display: inline-block;
+        "
+      >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sinae</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>Jane</td>
+            <td>50</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+  </body>
+</html>
