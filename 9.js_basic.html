@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Basic</title>
+    <script>
+      function showObject() {
+        // 리터럴 방식
+        var person = { name: "hong", age: 20, email: "hong@naver.com" };
+        person.name = "Sinae";
+        person.password = "1234";
+        var str =
+          "Name is : " +
+          person.name +
+          "<br>" +
+          "Age is : " +
+          person.age +
+          "<br>" +
+          "Email is : " +
+          person.email +
+          "<br>" +
+          "Password is : " +
+          person.password;
+        console.log(person);
+        document.getElementById("result").innerHTML = str;
+      }
+
+      function convertType() {
+        // 숫자 클래스 : Number,
+        // 문자 클래스 : String,
+        // 참/거짓 : Boolean
+
+        var numStr = "10";
+        var str = "문자열";
+        var output =
+          "Number 변환 : " +
+          Number(numStr) +
+          "<br>" +
+          "String 변환 : " +
+          String(10) +
+          "<br>" +
+          "Boolean 변환 : " +
+          Boolean(0);
+        document.getElementById("result").innerHTML = output;
+      }
+
+      function showNaN() {
+        var output = "10" - "문자열";
+        console.log(output);
+        console.log(typeof output);
+        document.getElementById("result").innerHTML = output;
+      }
+
+      function showNull() {
+        var output1;
+        console.log(output1);
+        var output2 = null;
+        console.log(output2);
+        var output =
+          "output1 type : " +
+          typeof output1 +
+          "<br>" +
+          "output2 type : " +
+          typeof output2 +
+          "<br>" +
+          "output1==output2 : " +
+          (output1 == output2) + //값비교
+          "<br>" +
+          "output1===output2 : " +
+          (output1 === output2); //type 비교
+        document.getElementById("result").innerHTML = output;
+      }
+      function showDateConversion() {
+        var date = new Date();
+        var date_num = date.getDate();
+        var date_str = date.toString();
+        document.getElementById("result").innerHTML = date_num;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JS 객체</h2>
+    <button onclick="showObject()">객체 생성</button>
+    <button onclick="convertType()">형 변환</button>
+    <button onclick="showNaN()">NaN 에러 발생</button>
+    <button onclick="showNull()">undefined, null</button>
+    <button onclick="showDateConversion()">date 변환</button>
+    <p id="result">반환결과</p>
+  </body>
+</html>
