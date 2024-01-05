@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Async_Await</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      async function callbackImp() {
+        try {
+          const response1 = await $.ajax({
+            url: "https://jsonplaceholder.typicode.com/posts/1",
+            type: "GET",
+            dataType: "json",
+          });
+          console.log("AJAX");
+          console.log(response1);
+        } catch (error) {
+          console.log(error);
+        }
+
+        //     const response2 = await $.ajax({
+        //       url: "https://naver.com",
+        //       method: "POST",
+        //       dataType: "json",
+        //       data: response1,
+        //     });
+        //     console.log(response2);
+
+        //     const response3 = await $.ajax({
+        //       url: "https://daum.com",
+        //       method: "POST",
+        //       dataType: "json",
+        //       data: response2,
+        //     });
+        //     console.log(response3);
+        //   }
+
+        try {
+          const response1 = await axios.get(
+            "https://jsonplaceholder.typicode.com/posts/1"
+          );
+          console.log("AXIOS");
+          console.log(response1.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      callbackImp();
+    </script>
+  </body>
+</html>

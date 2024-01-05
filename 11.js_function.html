@@ -1,15 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>JS Function</title>
     <script>
-        function basicFunctionCall(){
-            alert("함수 호출 완료");
+      function basicFunctionCall1() {
+        alert("함수 호출 완료");
+      }
+      function basicFunctionCall2() {
+        alert(makeString1());
+      }
+      function basicFunctionCall3() {
+        alert(makeString2());
+      }
+      function basicFunctionCall4() {
+        alert(makeString3());
+      }
+      function makeString1() {
+        return "Hello World1";
+      }
+      const makeString2 = function () {
+        return "Hello World2";
+      };
+      const makeString3 = () => "Hello World3";
+      const basicFunctionCall5 = (a = "guest") => alert("Hello " + a); //default값을 guest로 지정
+      const basicFunctionCall6 = (...numbers) => {
+        const total = numbers.reduce((a, b) => a + b, 0); //callback function의 전형적인 예시
+        alert(total);
+      };
+
+      function calculator() {
+        const operator = document.getElementById("operator").value;
+
+        let calArr = document.getElementsByClassName("calculate1");
+        let answer = 0;
+
+        if (operator === "plus") {
+          answer = parseInt(calArr[0].value) + parseInt(calArr[1].value);
+        } else if (operator === "minus") {
+          answer = calArr[0].value - calArr[1].value;
+        } else if (operator === "multiply") {
+          answer = calArr[0].value * calArr[1].value;
+        } else if (operator === "divide") {
+          answer = calArr[0].value / calArr[1].value;
         }
+        document.getElementById("calResult").innerText = answer;
+      }
+
+      let count = document.getElementsByClassName("resume").length;
+
+      function addItem() {
+        count = document.getElementsByClassName("resume").length;
+        count++;
+        const addition =
+          "<p class='resume'><label>항목" +
+          count +
+          "</label><input type='text'/></p>";
+        document.getElementById("resume").innerHTML += addition;
+      }
+
+      function removeItem() {
+        count = document.getElementsByClassName("resume").length;
+        document.getElementsByClassName("resume")[count - 1].innerHTML = " ";
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <h2>JS 기본 함수 호출</h2>
-    <button onclick="basicFunctionCall()">함수 호출</button>
-</body>
+    <button onclick="basicFunctionCall1()">함수 호출</button>
+    <button onclick="basicFunctionCall2()">HelloWorld 함수 호출1</button>
+    <button onclick="basicFunctionCall3()">HelloWorld 함수 호출2</button>
+    <button onclick="basicFunctionCall4()">HelloWorld 함수 호출3</button>
+    <button onclick="basicFunctionCall5()">매개변수 함수 호출</button>
+    <button onclick="basicFunctionCall6(1,2,3,4,5)">
+      나머지 매개변수 함수 호출
+    </button>
+
+    <h2>계산기 프로그램</h2>
+    <div>
+      <label>사칙연산하기</label>
+      <input type="text" class="calculate1" />
+      <select id="operator">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+      </select>
+      <input type="text" class="calculate1" />
+      <button onclick="calculator()">계산하기</button>
+      <div id="calResult"></div>
+    </div>
+
+    <h2>이력서 입력</h2>
+    <div id="resume">
+      <p class="resume"><label>항목1</label><input type="text" /></p>
+      <p class="resume"><label>항목2</label><input type="text" /></p>
+    </div>
+    <button onclick="addItem()">항목 추가</button>
+    <button onclick="removeItem()">항목 제거</button>
+  </body>
 </html>

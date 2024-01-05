@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Callback Function</title>
+    <script>
+      // callback function 없음
+      function func() {
+        alert("Hello");
+      }
+      // callback function 있음
+      function callBackExample1() {
+        processUserInput((name) => {
+          console.log("Hello " + name);
+        });
+      }
+
+      function callBackExample2() {
+        processUserInput((name) => {
+          alert("Hello " + name);
+        });
+      }
+
+      //   function myCallback1(name) {
+      //     console.log("Hello " + name);
+      //   }
+
+      //   function myCallback2(name) {
+      //     alert("Hello " + name);
+      //   }
+
+      function processUserInput(callback) {
+        let name = prompt("이름을 입력해주세요.");
+        callback(name);
+      }
+
+      function callBackExample3() {
+        const numbers = [1, 2, 3, 4, 5];
+        numbers.forEach((a) => console.log(a));
+      }
+
+      function callBackExample4() {
+        // setTimeOut함수는 대표적인 JS의 비동기 함수이자 callback함수를 처리할 수 있는 함수
+        // 그외에 네트워크 작업을 수행하는 많은 함수가 비동기함수로 설계
+        setTimeout(() => console.log("HelloWorld1"), 2000);
+        console.log("HelloWorld2");
+        setTimeout(() => console.log("HelloWorld3"), 2000);
+        console.log("HelloWorld4");
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Callback Function</h2>
+    <button onclick="func()">Function Example1</button>
+    <button onclick="callBackExample1()">Callback Function Example1</button>
+    <button onclick="callBackExample2()">Callback Function Example2</button>
+    <button onclick="callBackExample3()">Callback Function Example3</button>
+    <button onclick="callBackExample4()">Callback Function Example4</button>
+  </body>
+</html>

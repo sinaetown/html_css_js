@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS AJAX</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts/1",
+          type: "GET",
+          dataType: "json",
+          success: function (a) {
+            console.log(a);
+          },
+          error: function () {},
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nested Callback</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts/1",
+          type: "GET",
+          dataType: "json",
+          success: function (response) {
+            console.log(response);
+            $.ajax({
+              url: "https://naver.com",
+              method: "POST",
+              dataType: "json",
+              data: response,
+              success: function (response2) {
+                console.log(response2);
+                $.ajax({
+                  url: "https://daum.com",
+                  method: "POST",
+                  dataType: "json",
+                  data: response2,
+                  success: function (response3) {
+                    console.log(response3);
+                  },
+                  error: function () {},
+                });
+              },
+              error: function () {},
+            });
+          },
+          error: function () {},
+        });
+      });
+    </script>
+  </body>
+</html>
