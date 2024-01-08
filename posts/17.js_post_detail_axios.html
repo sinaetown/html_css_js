@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>JS Postlist Axios</title>
+    <meta charset="UTF-8" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -9,7 +10,6 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
     <script>
       async function callbackImp() {
         try {
@@ -27,30 +27,16 @@
         }
       }
     </script>
+  <style>
+  object {
+      width:100vw;
+  }
+</style>
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-      <a class="navbar-brand" href="./home.html">게시판 서비스</a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="./register.html">회원가입</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./post-list.html">글목록</a>
-        </li>
-      </ul>
-    </nav>
-
+    <div id="header"></div>
     <div class="container">
       <div class="page-header"><h1>게시글 상세조회</h1></div>
-
-      <!-- <div class="float-end">
-        <a href="./7.css_bootstrap_postregister.html">
-          <button class="btn btn-primary">글쓰기</button>
-        </a>
-      </div> -->
-
       <input type="text" id="searchID" name="searchID" />
       <button class="btn btn-primary" onclick="callbackImp()">조회하기</button>
       <table class="table">
@@ -65,7 +51,7 @@
         </tr>
         <tr>
           <td>Contents:</td>
-          <td id="Contents"< /td>
+          <td id="Contents"</td>
         </tr>
         <tr>
           <td>Author ID:</td>
@@ -73,5 +59,6 @@
         </tr>
       </table>
     </div>
+    <script> document.getElementById("header").innerHTML = '<object type="text/html" data="header.html"></object>';</script>
   </body>
 </html>

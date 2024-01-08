@@ -2,26 +2,21 @@
 <html lang="en">
   <head>
     <title>CSS BOOTSTRAP</title>
+    <meta charset="UTF-8" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <style>
+      object {
+        width: 100vw;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-      <a class="navbar-brand" href="./home.html">게시판 서비스</a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="./register.html">회원가입</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./post-list.html">글목록</a>
-        </li>
-      </ul>
-    </nav>
-
+    <div id="header"></div>
     <div class="container">
       <div class="page-header"><h1>게시글 목록</h1></div>
 
@@ -49,5 +44,9 @@
         </tbody>
       </table>
     </div>
+    <script>
+      document.getElementById("header").innerHTML =
+        '<object type="text/html" data="header.html"></object>';
+    </script>
   </body>
 </html>
