@@ -20,8 +20,9 @@
       async function callbackImp() {
         try {
           const response1 = await axios.get(
-            // "http://localhost:8080/csr/json"
-            "https://jsonplaceholder.typicode.com/posts/"
+            "http://18.234.100.252:8080/csr/json"
+            // "http://localhost:8080/csr/json" //내 컴퓨터에서만 작동 가능!
+            // "https://jsonplaceholder.typicode.com/posts/"
           );
           //   단건의 경우! : 위에 링크가  "https://jsonplaceholder.typicode.com/posts/1" 일때
 
@@ -58,7 +59,7 @@
               </td> <td>
                 ${response1.data[i].body}
               </td> <td>
-                ${response1.data[i].userId}
+                ${response1.data[i].authorName}
               </td></tr>`;
           }
         } catch (error) {
@@ -84,7 +85,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Body</th>
-            <th>User Id</th>
+            <th>Author Name</th>
           </tr>
         </thead>
         <tbody id="dataRow"></tbody>
